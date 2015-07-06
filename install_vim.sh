@@ -1,8 +1,5 @@
 #!bash
 
-# Pre-requisites
-# brew install the_silver_searcher
-
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -119,5 +116,16 @@ mkdir -p ~/.vim/colors
 cp ~/.vim/bundle/vim-monokai/colors/monokai.vim ~/.vim/colors
 
 cd ~/.vim/bundle
-git clone https://github.com/rking/ag.vim
+git clone git://github.com/rking/ag.vim
+
+cd ~/.vim/bundle
+git clone git://github.com/bling/vim-bufferline
+
+# Provide Bdelete command in vim
+cd ~/.vim/bundle
+git clone git://github.com/moll/vim-bbye.git
+
+# Vim cucumber
+cd ~/.vim/bundle
+t clone git://github.com/tpope/vim-cucumber.git
 

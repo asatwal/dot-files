@@ -73,8 +73,20 @@ autocmd BufWinLeave * call clearmatches()
 let mapleader = ','
 
 " NERDTree
+" Open NERDTree automatically on startup
 autocmd vimenter * NERDTree
 let NERDTreeShowHidden=1
+let NERDTreeHighlightCursorline=1
+let NERDTreeMouseMode=1
+let NERDTreeShowBookmarks=1
+let NERDTreeShowLineNumbers=1
+
+" Toggle NERDTree window Ctrl-n
+map <C-n> :NERDTreeToggle<CR>
+
+" Close vim if the only window left open is a NERDTree?
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 
 
 " SYNTASTIC
@@ -88,31 +100,22 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" CTRL-P
-
+" CTRL-P fuzzyfinder config
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-" let g:ctrlp_map = '<c-p>'
-" let g:ctrlp_cmd = 'CtrlP'
-
-" ctrlp config
 let g:ctrlp_map = '<leader>f'
+let g:ctrlp_dotfiles=1
 let g:ctrlp_max_height = 30
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_match_window_reversed = 0
+map <silent> <leader>c :CtrlPBuffer<cr>
 
 " use silver searcher for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 
-" map fuzzyfinder (CtrlP) plugin
-"nmap <silent> <leader>t :CtrlP<cr>
-"nmap <silent> <leader>r :CtrlPBuffer<cr>
-"let g:ctrlp_map='<leader>t'
-"let g:ctrlp_dotfiles=1
-
 
 " put git status, column/row number, total lines, and percentage in status
-set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+set statusline+=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " map git commands
 map <leader>b :Gblame<cr>
@@ -135,8 +138,9 @@ endif
 
 " vim-easymotion
 
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
+let g:EasyMotion_do_mapping = 1 " Enable default mappings
+" Maps Alt-[m] to easymotion
+map <silent> µ <Plug>(easymotion-prefix)
 " Bi-directional find motion
 " " Jump to anywhere you want with minimal keystrokes, with just one key
 " binding.
@@ -156,10 +160,69 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " YouCompleteMe
 
-
-
 " The silver searcher
 nnoremap K :silent grep! "\b\s?<C-R><C-W>\b"<CR>:cw<CR>:redr!<CR>
 
+" Window make full size
+map _ <c-w>_
 
+" Maps Alt-[h,j,k,l] to resizing a window split
+map <silent> ˙ <C-w><
+map <silent> ∆ <C-W>-
+map <silent> ˚ <C-W>+
+map <silent> ¬ <C-w>>
+
+" Maps Alt-[s,v] to horizontal and vertical split respectively
+map <silent> ß :split<CR>
+map <silent> √ :vsplit<CR>
+
+" Maps Alt-[w,e] for moving previous and next window respectively
+map <silent> œ <C-w><S-w>
+map <silent> ∑ <C-w><C-w>
+
+" Maps Alt-[z,x] for moving previous and next window respectively
+map <silent> Ω :bp<CR>
+map <silent> ≈ :bn<CR>
+
+" Maps Alt-[c] for buffer list
+map <silent> ç :buffers<CR>
+
+" Maps Alt-[t] to toggle between buffers
+map <silent> † :b#<CR>
+
+" Custom commands for handling buffers
+"
+" Maps Alt-[d] to delete current buffer without closing window
+map <silent> ∂ :Bdelete<CR>
+
+" Maps Alt-[a] to delete all buffers without closing window
+map <silent> å :bufdo :Bdelete<CR>
+
+" Type Ngb to jump to buffer number N (a number from 1 to 99)
+" Type Ngd to delete buffer number N (a number from 1 to 99)
+
+let c = 1
+while c <= 99
+  execute "nnoremap " . c . "gb :" . c . "b\<CR>"
+  execute "nnoremap " . c . "gl :" . "Bdelete " . c . "\<CR>"
+  let c += 1
+endwhile
+
+" Airline
+" Enable modified detection >
+let g:airline_detect_modified = 1
+
+" enable/disable fugitive/lawrencium integration
+let g:airline#extensions#branch#enabled = 1
+
+" Enable the list of buffers
+let g:airline#extensions#bufferline#enabled = 0
+
+" Tagbar Alt-[b]
+map <silent> ∫ :TagbarToggle<CR>
+
+" Bufferline
+" scrolling with fixed current buffer position
+let g:bufferline_rotate = 1
+let g:bufferline_fixed_index =  1 "always second (default)
 
