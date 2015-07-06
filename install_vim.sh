@@ -1,5 +1,8 @@
 #!bash
 
+# Pre-requisites
+# brew install the_silver_searcher
+
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
