@@ -6,7 +6,6 @@ call pathogen#infect()
 call pathogen#helptags()
 
 syntax on
-set mouse=a
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -15,6 +14,14 @@ set number
 colorscheme monokai
 " set background=dark
 " colorscheme solarized
+
+
+" Mouse Options
+set ttyfast            " Send more characters for redraws
+set mouse=a            " Enable mouse use in all modes
+set ttymouse=xterm2    " Set this to the name of your terminal that supports mouse codes.
+                       " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+
 
 set autoindent                    " set auto indent
 set ts=2                          " set indent to 2 spaces
@@ -87,10 +94,7 @@ map <C-n> :NERDTreeToggle<CR>
 " Close vim if the only window left open is a NERDTree?
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-
-
 " SYNTASTIC
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -112,51 +116,48 @@ map <silent> <leader>c :CtrlPBuffer<cr>
 " use silver searcher for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-
-
 " put git status, column/row number, total lines, and percentage in status
 set statusline+=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 
 " map git commands
 map <leader>b :Gblame<cr>
-map <leader>l :!clear && git log -p %<cr>
+map <leader>g :!clear && git log -p %<cr>
 map <leader>d :!clear && git diff %<cr>
 
 " map Silver Searcher
 map <leader>a :Ag!<space>
 
-" clear the command line and search highlighting
-noremap <C-l> :nohlsearch<CR>
+" clear highlighted search
+" noremap <C-s> :nohlsearch<CR>
+noremap <space> :nohlsearch<cr>
+" Permanently switching off highlight
+" noremap <space> :set hlsearch! hlsearch?<cr>
 
 " hint to keep lines short
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
-
-
-
 " vim-easymotion
-
 let g:EasyMotion_do_mapping = 1 " Enable default mappings
 " Maps Alt-[m] to easymotion
 map <silent> µ <Plug>(easymotion-prefix)
+
 " Bi-directional find motion
-" " Jump to anywhere you want with minimal keystrokes, with just one key
-" binding.
-" " `s{char}{label}`
-" nmap s <Plug>(easymotion-s)
-" " or
-" " `s{char}{char}{label}`
-" " Need one more keystroke, but on average, it may be more comfortable.
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
 " nmap s <Plug>(easymotion-s2)
-"
-" " Turn on case insensitive feature
-" let g:EasyMotion_smartcase = 1
-"
-" " JK motions: Line motions
-" map <Leader>j <Plug>(easymotion-j)
-" map <Leader>k <Plug>(easymotion-k)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " YouCompleteMe
 
@@ -189,6 +190,9 @@ map <silent> ç :buffers<CR>
 
 " Maps Alt-[t] to toggle between buffers
 map <silent> † :b#<CR>
+
+" switch between current and last buffer
+nmap <leader>. <c-^>
 
 " Custom commands for handling buffers
 "
@@ -225,4 +229,17 @@ map <silent> ∫ :TagbarToggle<CR>
 " scrolling with fixed current buffer position
 let g:bufferline_rotate = 1
 let g:bufferline_fixed_index =  1 "always second (default)
+
+
+" vim-rspec
+ let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+
+" vim-rspec mappings
+map <leader>r :call RunCurrentSpecFile()<CR>
+map <leader>n :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>s :call RunAllSpecs()<CR>
+
+" search for word under the cursor
+nnoremap <leader>/ "fyiw :/<c-r>f<cr>
 

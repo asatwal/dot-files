@@ -1,5 +1,10 @@
 #!bash
 
+# brew install tmux
+# brew install macvim --override-system-vim
+# brew install reattach-to-user-namespace
+# brew install tmux
+
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -127,5 +132,13 @@ git clone git://github.com/moll/vim-bbye.git
 
 # Vim cucumber
 cd ~/.vim/bundle
-t clone git://github.com/tpope/vim-cucumber.git
+git clone git://github.com/tpope/vim-cucumber.git
+
+# Vim rspec
+cd ~/.vim/bundle
+git clone git://github.com/thoughtbot/vim-rspec
+
+# Vim dispatch
+cd ~/.vim/bundle
+git clone git://github.com/jgdavey/tslime.vim/
 
