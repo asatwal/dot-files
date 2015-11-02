@@ -5,7 +5,6 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-syntax on
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -23,8 +22,9 @@ set ttymouse=xterm2    " Set this to the name of your terminal that supports mou
                        " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
 
 
+"set paste                         " don't format when pasting
 set autoindent                    " set auto indent
-set ts=2                          " set indent to 2 spaces
+set tabstop=2                     " set indent to 2 spaces
 set shiftwidth=2
 set expandtab                     " use spaces, not tab characters
 set nocompatible                  " don't need to be compatible with old vim
@@ -181,7 +181,7 @@ map <silent> √ :vsplit<CR>
 map <silent> œ <C-w><S-w>
 map <silent> ∑ <C-w><C-w>
 
-" Maps Alt-[z,x] for moving previous and next window respectively
+" Maps Alt-[z,x] for moving previous and next buffer respectively
 map <silent> Ω :bp<CR>
 map <silent> ≈ :bn<CR>
 
@@ -232,7 +232,7 @@ let g:bufferline_fixed_index =  1 "always second (default)
 
 
 " vim-rspec
- let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+ let g:rspec_command = 'call Send_to_Tmux("be rspec {spec}\n")'
 
 " vim-rspec mappings
 map <leader>r :call RunCurrentSpecFile()<CR>

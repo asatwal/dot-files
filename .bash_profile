@@ -11,6 +11,9 @@ alias go='git checkout '
 alias tm='tmux source-file ~/.tmux/dev.tmux.conf'
 alias tn='tmux attach-session -t dev || tmux new-session -s dev -n ide'
 
+alias be='bundle exec '
+
+
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;35;40'
 export GREP_COLOR='1;37;41'
@@ -19,5 +22,7 @@ export CLICOLOR=ANSI
 export LSCOLORS="exfxcxdxcxegedabagacad"
 
 export EDITOR=/usr/local/bin/vim
+# export VIMRUNTIME=/usr/local/share/vim/vim74
+
 
 
