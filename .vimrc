@@ -45,6 +45,8 @@ set nofoldenable                  " disable code folding
 set clipboard=unnamed             " use the system clipboard
 set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
+set directory=$HOME/.vim/swapfiles// " directory for swap files
+set shell=/bin/bash               " set shell to stop tmp file errors in vim
 
 
 " set up some custom colors
@@ -90,6 +92,9 @@ let NERDTreeShowLineNumbers=1
 
 " Toggle NERDTree window Ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+
+" Find file in NERDTree window
+nmap <leader>t :NERDTreeFind<CR>
 
 " Close vim if the only window left open is a NERDTree?
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
