@@ -1,4 +1,4 @@
-#!bash
+#!/bin/bash
 
 # brew install tmux
 # brew install macvim --override-system-vim
