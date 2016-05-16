@@ -35,3 +35,7 @@ export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ 
 
 # Git completion
 source ~/.bash/git-completion.bash
+
+# Node
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
