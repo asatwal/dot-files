@@ -248,3 +248,6 @@ map <leader>s :call RunAllSpecs()<CR>
 " search for word under the cursor
 nnoremap <leader>/ "fyiw :/<c-r>f<cr>
 
+" vim-emmett mappings
+let g:user_emmet_leader_key='<C-Y>'
+

@@ -142,3 +142,7 @@ git clone git://github.com/thoughtbot/vim-rspec
 cd ~/.vim/bundle
 git clone git://github.com/jgdavey/tslime.vim/
 
+# Vim emmet
+cd ~/.vim/bundle
+git clone https://github.com/mattn/emmet-vim.git
+
