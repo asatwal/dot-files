@@ -146,3 +146,7 @@ git clone git://github.com/jgdavey/tslime.vim/
 cd ~/.vim/bundle
 git clone https://github.com/mattn/emmet-vim.git
 
+# Bracketed paste
+cd ~/.vim/bundle
+git clone https://github.com/ConradIrwin/vim-bracketed-paste
+
