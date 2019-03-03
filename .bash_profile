@@ -1,6 +1,7 @@
+PATH=.:$HOME/bin:/usr/local/bin:$PATH
+
 eval "$(rbenv init -)"
 set -o vi
-PATH=.:$HOME/bin:/usr/local/bin:$PATH
 
 alias gs='git status '
 alias ga='git add '
@@ -21,7 +22,7 @@ alias bcg='cd ~/bcg-dv'
 alias bcgs='cd ~/bcg-dv/search'
 alias bcgm='cd ~/bcg-dv/metalhub'
 alias bcgw='cd ~/bcg-dv/metalhub-web'
-alias logs='ssh -i ~/pem/log.pem log@logserver.infra.yellow.which.co.uk'
+alias bcga='cd ~/bcg-dv/metalhub-api'
 
 
 export GREP_OPTIONS='--color=auto'
@@ -43,3 +44,13 @@ export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ 
 
 # Git completion
 source ~/.bash/git-completion.bash
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+export NVM_DIR="$HOME/.nvm"
+. $(brew --prefix nvm)/nvm.sh
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
