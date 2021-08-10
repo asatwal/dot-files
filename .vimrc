@@ -10,9 +10,9 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 set number
-colorscheme monokai
+colorscheme peachpuff
 " set background=dark
-" colorscheme solarized
+" colorscheme monokai solarized
 
 
 " Mouse Options
@@ -250,4 +250,12 @@ nnoremap <leader>/ "fyiw :/<c-r>f<cr>
 
 " vim-emmett mappings
 let g:user_emmet_leader_key='<C-Y>'
+
+"map useless key to Esc
+imap § <Esc>
+imap jj <Esc>
+
+
+"map jf to Python Formatter
+map <leader>jf :%!python -m json.tool<CR>
 

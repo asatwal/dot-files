@@ -107,7 +107,7 @@ cd ~/.vim/bundle
 git clone git://github.com/Valloric/YouCompleteMe.git
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
-./install.sh
+./install.py
 
 # Unite
 cd ~/.vim/bundle

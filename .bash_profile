@@ -1,7 +1,6 @@
 PATH=.:$HOME/bin:/usr/local/bin:$PATH
 
 eval "$(rbenv init -)"
-set -o vi
 
 alias gs='git status '
 alias ga='git add '
@@ -19,11 +18,16 @@ alias bsp='cd ~/bigsofa/platform'
 alias rad='cd ~/which/reviews-and-advice'
 alias svc='cd ~/which/services'
 alias bcg='cd ~/bcg-dv'
-alias bcgs='cd ~/bcg-dv/search'
-alias bcgm='cd ~/bcg-dv/metalhub'
-alias bcgw='cd ~/bcg-dv/metalhub-web'
-alias bcga='cd ~/bcg-dv/metalhub-api'
+alias ca='cd ~/bcg-dv/catalogue-api'
+alias dw='cd ~/bcg-dv/direct-web'
+alias da='cd ~/bcg-dv/direct-api'
+alias dp='cd ~/bcg-dv/direct-portal'
+alias pw='cd ~/bcg-dv/procure-web'
+alias pa='cd ~/bcg-dv/procure-api'
+alias ss='cd ~/bcg-dv/steelscout'
+alias bo='cd ~/Documents/Python/bounce'
 
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;35;40'
@@ -32,8 +36,10 @@ export GREP_COLOR='1;37;41'
 export CLICOLOR=ANSI
 export LSCOLORS="exfxcxdxcxegedabagacad"
 
+# VIM
 export EDITOR=/usr/local/bin/vim
-# export VIMRUNTIME=/usr/local/share/vim/vim74
+set -o vi
+
 export PHANTOMJS_BIN=/usr/local/bin/phantomjs
 
 # Git branch prompt
@@ -45,12 +51,17 @@ export PS1="\u@\h \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ 
 # Git completion
 source ~/.bash/git-completion.bash
 
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+# Setting PATH for Python 3.8
+# The original version is saved in .bash_profile.pysave.3.6
+PATH="/usr/local/opt/python@3.8/bin:${PATH}"
 export PATH
+export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig:${PKG_CONFIG_PATH}"
 
 export NVM_DIR="$HOME/.nvm"
 . $(brew --prefix nvm)/nvm.sh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
