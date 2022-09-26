@@ -13,18 +13,6 @@ alias tm='tmux source-file ~/.tmux/dev.tmux.conf'
 alias tn='tmux attach-session -t dev || tmux new-session -s dev -n ide'
 
 alias be='bundle exec '
-alias bs='cd ~/bigsofa'
-alias bsp='cd ~/bigsofa/platform'
-alias rad='cd ~/which/reviews-and-advice'
-alias svc='cd ~/which/services'
-alias bcg='cd ~/bcg-dv'
-alias ca='cd ~/bcg-dv/catalogue-api'
-alias dw='cd ~/bcg-dv/direct-web'
-alias da='cd ~/bcg-dv/direct-api'
-alias dp='cd ~/bcg-dv/direct-portal'
-alias pw='cd ~/bcg-dv/procure-web'
-alias pa='cd ~/bcg-dv/procure-api'
-alias ss='cd ~/bcg-dv/steelscout'
 alias bo='cd ~/Documents/Python/bounce'
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
