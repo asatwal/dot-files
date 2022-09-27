@@ -10,9 +10,9 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 set number
-colorscheme peachpuff
+colorscheme monokai
 " set background=dark
-" colorscheme monokai solarized
+" colorscheme peachpuff solarized monokai
 
 
 " Mouse Options
@@ -47,6 +47,7 @@ set wildmenu                      " enable bash style tab completion
 set wildmode=list:longest,full
 set directory=$HOME/.vim/swapfiles// " directory for swap files
 set shell=/bin/bash               " set shell to stop tmp file errors in vim
+set nofixendofline                " don't auto add newline to end of file
 
 
 " set up some custom colors
