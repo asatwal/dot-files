@@ -11,8 +11,8 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # vim-rails
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-rails.git
-git clone git://github.com/tpope/vim-bundler.git
+git clone https://github.com/tpope/vim-rails.git
+git clone https://github.com/tpope/vim-bundler.git
 
 # To generate help tags
 #:helptags ~/.vim/bundle/nerdtree/doc
@@ -44,103 +44,103 @@ git clone https://github.com/scrooloose/nerdtree.git
 
 # Fugitive
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-fugitive.git
+git clone https://github.com/tpope/vim-fugitive.git
 
 # Ruby
 cd ~/.vim/bundle
-git clone git://github.com/vim-ruby/vim-ruby.git
+git clone https://github.com/vim-ruby/vim-ruby.git
 
 # Endwise
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-endwise.git
+git clone https://github.com/tpope/vim-endwise.git
 
 # Supertab
 cd ~/.vim/bundle
-git clone git://github.com/ervandew/supertab.git
+git clone https://github.com/ervandew/supertab.git
 
 # Syntastic
 cd ~/.vim/bundle
-git clone git://github.com/scrooloose/syntastic.git
+git clone https://github.com/scrooloose/syntastic.git
 
 # CTRLP.VIM
 cd ~/.vim/bundle
-git clone  git://github.com/kien/ctrlp.vim.git
+git clone https://github.com/kien/ctrlp.vim.git
 
 # Vim-airline
 cd ~/.vim/bundle
-git clone git://github.com/bling/vim-airline.git
+git clone https://github.com/bling/vim-airline.git
 
 # vim-colors-solarized
 cd ~/.vim/bundle
-git clone git://github.com/altercation/vim-colors-solarized.git
+git clone https://github.com/altercation/vim-colors-solarized.git
 
 # NERD Commenter
 cd ~/.vim/bundle
-git clone git://github.com/scrooloose/nerdcommenter.git
+git clone https://github.com/scrooloose/nerdcommenter.git
 
 # Tag bar
 cd ~/.vim/bundle
-git clone git://github.com/majutsushi/tagbar.git
+git clone https://github.com/majutsushi/tagbar.git
 
 # Rails
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-rails.git
+git clone https://github.com/tpope/vim-rails.git
 
 # Easy motion
 cd ~/.vim/bundle
-git clone  git://github.com/Lokaltog/vim-easymotion.git
+git clone https://github.com/Lokaltog/vim-easymotion.git
 
 # Tabular
 cd ~/.vim/bundle
-git clone git://github.com/godlygeek/tabular.git
+git clone https://github.com/godlygeek/tabular.git
 
 # VIM Git gutter
 cd ~/.vim/bundle
-git clone git://github.com/airblade/vim-gitgutter.git
+git clone https://github.com/airblade/vim-gitgutter.git
 
 # vim repeat
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-repeat.git
+git clone https://github.com/tpope/vim-repeat.git
 
 # You Complete Me
 cd ~/.vim/bundle
-git clone git://github.com/Valloric/YouCompleteMe.git
+git clone https://github.com/Valloric/YouCompleteMe.git
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
 ./install.py
 
 # Unite
 cd ~/.vim/bundle
-git clone git://github.com/Shougo/unite.vim.git
+git clone https://github.com/Shougo/unite.vim.git
 
 # Monakai color scheme
 cd ~/.vim/bundle
-git clone git://github.com/sickill/vim-monokai.git
+git clone https://github.com/sickill/vim-monokai.git
 
 mkdir -p ~/.vim/colors
 cp ~/.vim/bundle/vim-monokai/colors/monokai.vim ~/.vim/colors
 
 cd ~/.vim/bundle
-git clone git://github.com/rking/ag.vim
+git clone https://github.com/rking/ag.vim
 
 cd ~/.vim/bundle
-git clone git://github.com/bling/vim-bufferline
+git clone https://github.com/bling/vim-bufferline
 
 # Provide Bdelete command in vim
 cd ~/.vim/bundle
-git clone git://github.com/moll/vim-bbye.git
+git clone https://github.com/moll/vim-bbye.git
 
 # Vim cucumber
 cd ~/.vim/bundle
-git clone git://github.com/tpope/vim-cucumber.git
+git clone https://github.com/tpope/vim-cucumber.git
 
 # Vim rspec
 cd ~/.vim/bundle
-git clone git://github.com/thoughtbot/vim-rspec
+git clone https://github.com/thoughtbot/vim-rspec
 
 # Vim dispatch
 cd ~/.vim/bundle
-git clone git://github.com/jgdavey/tslime.vim/
+git clone https://github.com/jgdavey/tslime.vim/
 
 # Vim emmet
 cd ~/.vim/bundle
