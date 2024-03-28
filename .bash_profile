@@ -2,6 +2,9 @@ PATH=.:$HOME/bin:/usr/local/bin:$PATH
 
 eval "$(rbenv init -)"
 
+# Gcloud
+source "$(brew --prefix)/share/google-cloud-sdk/path.bash.inc"
+
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -9,9 +12,8 @@ alias gc='git commit '
 alias gd='git diff'
 alias go='git checkout '
 alias gl='git log --graph --format=oneline'
-alias tm='tmux source-file ~/.tmux/dev.tmux.conf'
-alias tn='tmux attach-session -t dev || tmux new-session -s dev -n ide'
-
+alias tm='tmux start-server \; source-file ~/.tmux/dev.tmux.conf'
+alias tn='tmux new-session -A -s dev -n ide'
 alias be='bundle exec '
 alias bo='cd ~/Documents/Python/bounce'
 
@@ -50,6 +52,7 @@ export NVM_DIR="$HOME/.nvm"
 . $(brew --prefix nvm)/nvm.sh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Anything that shouldn't be commited to github
+source ~/.secrets
